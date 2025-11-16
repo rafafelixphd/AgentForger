@@ -1,0 +1,77 @@
+{
+  "version": "1.0",
+  "systemIdentity": {
+    "name": "Agent Forger",
+    "purpose": "Meta-system for creating AI agents, workflows, commands, rules, and templates",
+    "philosophy": "Modular, extensible, quality-focused agent collaboration"
+  },
+  "environment": {
+    "structure": "pipeline_architecture",
+    "enforcement": "modular_hooks_system",
+    "messaging": "local_document_based",
+    "validation": "rules_based"
+  },
+  "architecture": {
+    "pipeline": {
+      "phases": ["initialization", "parameters", "workflow", "validation", "output"],
+      "orchestrator": ".system/hooks/core/orchestrator.js"
+    },
+    "workflows": {
+      "categories": ["message", "system", "output", "agent"],
+      "location": ".system/hooks/workflows/",
+      "inheritance": "BaseWorkflow"
+    },
+    "rules": {
+      "engine": "modular_validation",
+      "categories": ["message"],
+      "location": ".system/rules/"
+    },
+    "utilities": {
+      "categories": ["system", "file"],
+      "location": ".system/hooks/utilities/",
+      "types": ["javascript", "python", "bash"]
+    }
+  },
+  "aiGuidelines": {
+    "interactionStyle": "direct_concise_helpful",
+    "outputFormat": "consistent_structured",
+    "errorHandling": "clear_actionable",
+    "proactivity": "user_requested_only"
+  },
+  "contextAwareness": {
+    "systemRole": "AI agent orchestration system",
+    "contentFocus": "Structured content generation and agent management",
+    "voice": "Technical and professional",
+    "platforms": ["Command line", "File system"]
+  },
+  "operationalContext": {
+    "keyDirectories": {
+      "workspace": "workspace/",
+      "system": ".system/",
+      "hooks": ".system/hooks/",
+      "commands": ".system/commands/",
+      "templates": ".system/templates/",
+      "configs": ".system/configs/",
+      "docs": "docs/"
+    },
+    "filePatterns": {
+      "commands": ".system/commands/*/*.md",
+      "templates": ".system/templates/*/*.json",
+      "configs": ".system/configs/*.json",
+      "messaging": "workspace/conversation/_inbox.md"
+    }
+  },
+  "behaviorRules": {
+    "neverAssume": ["library_availability", "file_locations", "user_intent"],
+    "alwaysVerify": ["file_access", "command_parameters", "system_state"],
+    "enforceWorkflow": ["pipeline_execution", "phase_completion", "validation"],
+    "maintainSecurity": ["no_secrets_in_code", "safe_file_operations", "input_validation"]
+  },
+  "systemCapabilities": {
+    "commandProcessing": "markdown_documented",
+    "templateSystem": "structured_json",
+    "hookArchitecture": "modular_pipeline",
+    "validationEngine": "rules_based",
+    "utilityFramework": "multi_language"
+  }
+}

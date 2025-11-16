@@ -1,0 +1,90 @@
+{
+  "version": "1.0",
+  "pipelineFormatting": {
+    "phaseIndicators": {
+      "initialization": "🔧 INIT",
+      "parameters": "📋 PARAMS",
+      "workflow": "⚙️ WORKFLOW",
+      "validation": "✅ VALIDATE",
+      "output": "📤 OUTPUT"
+    },
+    "statusSymbols": {
+      "running": "🔄",
+      "success": "✅",
+      "warning": "⚠️",
+      "error": "❌",
+      "skipped": "⏭️"
+    },
+    "progressFormat": "Phase X/Y: [PHASE_NAME] - STATUS"
+  },
+  "formatting": {
+    "sections": {
+      "header": "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+      "separator": "────────────────────────────────────────",
+      "footer": "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    },
+    "elements": {
+      "bullet": "  → ",
+      "warning": "⚠️ ",
+      "error": "❌ ",
+      "success": "✅ ",
+      "info": "ℹ️ ",
+      "action": "🔧 "
+    },
+    "spacing": {
+      "lineBreaks": "single",
+      "paragraphSpacing": "double",
+      "indentation": "two_spaces"
+    }
+  },
+  "contentStructure": {
+    "commands": {
+      "showUsage": true,
+      "showExamples": true,
+      "showParameters": true,
+      "showPipeline": true
+    },
+    "results": {
+      "showSummary": true,
+      "showDetails": "on_request",
+      "showMetadata": false,
+      "showPhases": true
+    },
+    "errors": {
+      "showCause": true,
+      "showSolution": true,
+      "showPrevention": true,
+      "showPhase": true
+    }
+  },
+  "validationOutput": {
+    "scoreFormat": "X.X/10.0",
+    "issueFormat": "numbered_list",
+    "recommendationFormat": "actionable_bullets",
+    "thresholdIndicators": {
+      "passing": "✅ PASSED",
+      "failing": "❌ FAILED",
+      "warning": "⚠️ WARNING"
+    },
+    "ruleFormat": "RULE_NAME: STATUS - MESSAGE"
+  },
+  "progressReporting": {
+    "steps": "numbered",
+    "completion": "percentage",
+    "timeEstimates": "when_available",
+    "blockers": "highlighted",
+    "phaseTiming": "show_duration"
+  },
+  "fileOperations": {
+    "creation": "show_path_and_status",
+    "modification": "show_changes_summary",
+    "deletion": "confirm_before_proceed",
+    "errors": "detailed_with_recovery"
+  },
+  "hookOutput": {
+    "utilityResults": "structured_json",
+    "ruleValidation": "detailed_report",
+    "workflowSummary": "phase_breakdown",
+    "orchestratorLogs": "timestamped_events"
+  }
+}

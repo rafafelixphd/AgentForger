@@ -201,6 +201,24 @@ async execute(context) {
 }
 ```
 
+### 8. Configuration System
+
+The system includes a comprehensive configuration framework documented in [`docs/configs.md`](../configs.md).
+
+**AI Context (`.system/configs/ai-context.json`):**
+Defines AI guidelines, operational context, and system behavior rules.
+
+**Output Standards (`.system/configs/output-standards.json`):**
+Specifies formatting standards for pipeline output, content structure, and user interface elements.
+
+**Performance Targets (`.system/configs/performance-targets.json`):**
+Sets performance benchmarks, quality thresholds, and resource usage limits.
+
+### 9. System Manifest
+
+**Manifest (`.system/manifest.json`):**
+Provides a comprehensive overview of the system architecture, capabilities, and component inventory for documentation and maintenance purposes.
+
 ## Testing Integration
 
 ### Component-Level Testing

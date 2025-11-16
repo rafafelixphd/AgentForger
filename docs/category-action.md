@@ -272,7 +272,6 @@ All commands follow the 5-phase pipeline:
 
 ### 1. Modularity
 - Keep components focused on single responsibilities
-- Use inheritance for shared functionality
 - Follow established naming conventions
 
 ### 2. Error Handling
@@ -310,7 +309,6 @@ echo "# /design:concept\n\nGenerate design concepts" > .system/commands/design/c
 ---
 name: design-critic
 description: Design critique and feedback specialist
-inherits_from: ego
 ---
 ```
 

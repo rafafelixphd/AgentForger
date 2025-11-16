@@ -1,0 +1,149 @@
+{
+  "version": "1.0",
+  "name": "Agent Forger",
+  "description": "Meta-system for creating AI agents, workflows, commands, rules, and templates",
+  "created": "2025-11-17",
+  "updated": "2025-11-17",
+  "philosophy": "Modular, extensible, quality-focused agent collaboration",
+  "architecture": {
+    "type": "pipeline_based",
+    "phases": ["initialization", "parameters", "workflow", "validation", "output"],
+    "orchestrator": "centralized",
+    "modularity": "high"
+  },
+  "structure": {
+    "commands": {
+      "description": "User interface - categorized markdown documentation",
+      "format": "markdown_files",
+      "categories": [
+        "message",
+        "system",
+        "output",
+        "agent"
+      ],
+      "totalCommands": 11
+    },
+    "agents": {
+      "description": "AI system guidance personas",
+      "count": 1,
+      "types": [
+        "moderator"
+      ]
+    },
+    "hooks": {
+      "description": "Modular pipeline execution system",
+      "architecture": "5_phase_pipeline",
+      "components": {
+        "core": ["orchestrator"],
+        "workflows": ["base", "message", "system", "output", "agent"],
+        "rules": ["message-validation"],
+        "utilities": ["message-handler", "file-ops", "system"]
+      },
+      "totalModules": 22
+    },
+    "rules": {
+      "description": "Validation and workflow definitions",
+      "engine": "modular_rules_system",
+      "categories": [
+        "message"
+      ],
+      "criticalRules": 1
+    },
+    "templates": {
+      "description": "Structured content creation templates",
+      "categories": [
+        "messaging"
+      ],
+      "formats": [
+        "json_schema"
+      ],
+      "provenStructures": 1
+    },
+    "configs": {
+      "description": "System configuration and settings",
+      "version": "1.0",
+      "files": 3,
+      "aspects": [
+        "ai_context",
+        "output_standards",
+        "performance_targets"
+      ]
+    },
+    "docs": {
+      "description": "System documentation and guides",
+      "files": ["README.md", "category-action.md", "configs.md", "create-agent.md", "example-message-command.md", "hooks.md", "integration.md", "rules.md", "templates.md", "utilities.md"],
+      "coverage": ["architecture", "configuration", "usage", "development"]
+    }
+  },
+  "capabilities": {
+    "messaging": {
+      "localDiscussion": "document-based threads",
+      "moderation": "focus and brevity enforcement",
+      "routing": "pipeline-based"
+    },
+    "contentCreation": {
+      "platforms": [
+        "messaging"
+      ],
+      "templates": [
+        "conversation-thread"
+      ],
+      "validation": "rules-based quality checks",
+      "pipeline": "5-phase processing"
+    },
+    "outputControl": {
+      "verbosityLevels": "low/medium/high/off",
+      "formatTypes": "json/markdown/text",
+      "settingsPersistence": "session-based"
+    },
+    "agentManagement": {
+      "switching": "runtime agent changes",
+      "status": "current settings display",
+      "listing": "available agents",
+      "reset": "defaults restoration"
+    },
+    "systemManagement": {
+      "healthMonitoring": "basic diagnostics",
+      "workflowEnforcement": "programmatic compliance",
+      "validation": "multi-layered quality checks",
+      "architecture": "modular pipeline"
+    }
+  },
+  "pipelineFeatures": {
+    "orchestration": "centralized command routing",
+    "phaseExecution": "sequential processing with error handling",
+    "ruleValidation": "modular validation engine",
+    "utilityIntegration": "multi-language utilities",
+    "workflowExtension": "class-based inheritance",
+    "performanceMonitoring": "phase-level metrics",
+    "errorRecovery": "automatic retry mechanisms"
+  },
+  "keyFeatures": [
+    "Modular pipeline architecture",
+    "Agent-based content generation",
+    "Structured template system",
+    "Validation rule engine",
+    "Multi-language utilities",
+    "Document-based messaging",
+    "Extensible command system",
+    "Output formatting control",
+    "Runtime agent switching",
+    "Configuration-driven behavior"
+  ],
+  "integrationPoints": {
+    "userInterface": ".system/commands/",
+    "aiGuidance": ".system/agents/",
+    "pipelineExecution": ".system/hooks/",
+    "validationEngine": ".system/rules/",
+    "contentTemplates": ".system/templates/",
+    "systemConfiguration": ".system/configs/",
+    "documentation": "docs/",
+    "systemManifest": ".system/manifest.json"
+  },
+  "qualityStandards": {
+    "validationThreshold": 7.5,
+    "voiceConsistency": "enforced",
+    "workflowCompliance": "mandatory",
+    "pipelineReliability": "99.5_percent"
+  }
+}

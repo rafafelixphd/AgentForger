@@ -21,7 +21,6 @@ This architecture provides a framework for building extensible AI systems where 
 ### Extensible Design
 - **Component Modularity**: Independent, reusable system components
 - **Configuration-Driven**: Behavior defined through configuration files
-- **Inheritance Patterns**: Shared functionality through base classes
 - **Plugin Architecture**: Easy integration of new capabilities
 
 ## System Architecture
@@ -115,8 +114,7 @@ Complex Task → Task Decomposition → Agent Assignment → Parallel Processing
 ### Adding New Agents
 1. Define agent characteristics and capabilities
 2. Create response frameworks and guidelines
-3. Implement inheritance from base agent classes
-4. Integrate with existing workflows
+3. Integrate with existing workflows
 
 ### Creating New Workflows
 1. Define workflow requirements and phases
@@ -187,6 +185,17 @@ Output: Comprehensive analysis
 - **Workflow Definitions**: Processing logic and agent assignments
 - **Quality Standards**: Validation rules and thresholds
 - **Resource Allocation**: Performance tuning and scaling
+
+### System Configuration Files
+The system uses configuration files in the `.system/configs/` directory:
+- **`ai-context.json`**: AI guidelines, operational context, and behavior rules
+- **`output-standards.json`**: Formatting standards for pipeline output and content structure
+- **`performance-targets.json`**: Performance benchmarks and quality targets
+
+For detailed information about the configuration system, see [`docs/configs.md`](configs.md).
+
+### System Manifest
+- **`.system/manifest.json`**: Comprehensive system overview including architecture, capabilities, and component inventory
 
 ### Monitoring and Maintenance
 - **Performance Metrics**: Response times and resource usage

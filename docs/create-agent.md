@@ -1,7 +1,7 @@
 # How to Create a New Agent
 
 ## Overview
-Agents are specialized AI personas that provide consistent behavior and expertise. They use inheritance and structured response frameworks.
+Agents are specialized AI personas that provide consistent behavior and expertise. They use structured response frameworks.
 
 ## Step 1: Create Agent Definition
 
@@ -14,8 +14,6 @@ Create a markdown file with YAML frontmatter:
 ---
 name: agent-name
 description: What this agent specializes in (1-2 sentences)
-inherits_from: parent-agent
-model: inherit
 color: preferred-color
 filename: agent-name.md
 personality_traits:
@@ -91,34 +89,32 @@ Use the agent in commands that support agent selection:
 ## Example: Creating a "Code Reviewer" Agent
 
 1. **Create:** `.system/agents/code-reviewer.md`
-   ```yaml
-   ---
-   name: code-reviewer
-   description: Specialized in code quality assessment and improvement suggestions
-   inherits_from: ego
-   personality_traits:
-     - Meticulous: Catches subtle bugs and edge cases
-     - Constructive: Provides actionable improvement suggestions
-   ---
-   ```
+    ```yaml
+    ---
+    name: code-reviewer
+    description: Specialized in code quality assessment and improvement suggestions
+    personality_traits:
+      - Meticulous: Catches subtle bugs and edge cases
+      - Constructive: Provides actionable improvement suggestions
+    ---
+    ```
 
 2. **Create:** `.system/templates/agents/code-reviewer.json`
-   ```json
-   {
-     "code-reviewer": {
-       "response_structure": [
-         {
-           "type": "header",
-           "template": "🔍 **CODE REVIEW**"
-         }
-       ]
-     }
-   }
-   ```
+    ```json
+    {
+      "code-reviewer": {
+        "response_structure": [
+          {
+            "type": "header",
+            "template": "🔍 **CODE REVIEW**"
+          }
+        ]
+      }
+    }
+    ```
 
 ## Best Practices
 
-- **Inheritance:** Always inherit from an existing agent for consistency
 - **Specialization:** Focus on 1-2 specific areas of expertise
 - **Guidelines:** Keep response structures simple and focused
 - **Testing:** Test with various inputs to ensure consistent behavior
@@ -131,4 +127,3 @@ Agents automatically get:
 - Response formatting
 - Quality validation
 - Integration with all workflows
-- Inheritance benefits from parent agents
