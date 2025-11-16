@@ -19,9 +19,10 @@
         "message",
         "system",
         "output",
-        "agent"
+        "agent",
+        "meta"
       ],
-      "totalCommands": 11
+      "totalCommands": 12
     },
     "agents": {
       "description": "AI system guidance personas",
@@ -35,11 +36,11 @@
       "architecture": "5_phase_pipeline",
       "components": {
         "core": ["orchestrator"],
-        "workflows": ["base", "message", "system", "output", "agent"],
+        "workflows": ["base", "message", "system", "output", "agent", "meta"],
         "rules": ["message-validation"],
         "utilities": ["message-handler", "file-ops", "system"]
       },
-      "totalModules": 22
+      "totalModules": 23
     },
     "rules": {
       "description": "Validation and workflow definitions",
@@ -102,6 +103,11 @@
       "listing": "available agents",
       "reset": "defaults restoration"
     },
+    "contextManagement": {
+      "globalContext": "accumulated session context",
+      "commandIntegration": "context available to all commands",
+      "sessionPersistence": "context maintained across commands"
+    },
     "systemManagement": {
       "healthMonitoring": "basic diagnostics",
       "workflowEnforcement": "programmatic compliance",
@@ -128,7 +134,8 @@
     "Extensible command system",
     "Output formatting control",
     "Runtime agent switching",
-    "Configuration-driven behavior"
+    "Configuration-driven behavior",
+    "Global context management"
   ],
   "integrationPoints": {
     "userInterface": ".system/commands/",

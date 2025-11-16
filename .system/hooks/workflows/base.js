@@ -46,6 +46,11 @@ class BaseWorkflow {
     }
   }
 
+  getContext(context) {
+    // Return accumulated global context
+    return context.globalContext || [];
+  }
+
   async executeInitializationPhase(context) {
     console.log('🔧 Initialization phase');
     return { status: 'initialized' };

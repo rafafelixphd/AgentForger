@@ -3,6 +3,7 @@ const SystemWorkflow = require('../workflows/system');
 const EmailWorkflow = require('../workflows/email');
 const OutputWorkflow = require('../workflows/output');
 const AgentWorkflow = require('../workflows/agent');
+const MetaWorkflow = require('../workflows/meta');
 const fs = require('fs');
 const path = require('path');
 
@@ -10,6 +11,7 @@ class Orchestrator {
   constructor() {
     this.workflows = new Map();
     this.settings = this.loadDefaultSettings();
+    this.context = []; // Global context storage
     this.initialize();
   }
 
@@ -56,6 +58,7 @@ class Orchestrator {
     this.workflows.set('email', new EmailWorkflow(this));
     this.workflows.set('output', new OutputWorkflow(this));
     this.workflows.set('agent', new AgentWorkflow(this));
+    this.workflows.set('meta', new MetaWorkflow(this));
 
     console.log('✅ Orchestrator initialized');
   }
@@ -73,6 +76,16 @@ class Orchestrator {
   async executeCommand(command, params = {}) {
     console.log(`🎯 Executing command: ${command}`);
 
+    // Extract and store global context if provided
+    if (params.context) {
+      this.context.push({
+        command: command,
+        content: params.context,
+        timestamp: new Date().toISOString()
+      });
+      console.log(`📝 Added context: ${params.context}`);
+    }
+
     const [category] = command.split(':');
     const workflow = this.workflows.get(category);
 
@@ -84,7 +97,7 @@ class Orchestrator {
       throw new Error(`Command not supported: ${command}`);
     }
 
-    const context = { command, params };
+    const context = { command, params, globalContext: this.context };
     const result = await workflow.execute(context);
 
     return result;
