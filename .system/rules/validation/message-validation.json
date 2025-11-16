@@ -1,0 +1,19 @@
+{
+  "name": "message-validation",
+  "rules": [
+    {
+      "id": "message_required",
+      "type": "presence",
+      "field": "message",
+      "message": "Message content is required"
+    },
+    {
+      "id": "message_length",
+      "type": "constraint",
+      "field": "message",
+      "operator": "max",
+      "value": 500,
+      "message": "Message content exceeds 500 characters"
+    }
+  ]
+}

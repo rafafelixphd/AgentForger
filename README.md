@@ -3,7 +3,7 @@
 *A meta-system for forging AI agents with structured workflows*
 
 <p align="center">
-  <img src="./src/loid-forger.webp" alt="Agent Forger Logo" width="200"/>
+  <img src="./docs/src/loid-forger.webp" alt="Agent Forger Logo" width="200"/>
 </p>
 
 ## What is Agent Forger?

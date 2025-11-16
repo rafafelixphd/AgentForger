@@ -5,11 +5,12 @@ Start brief AI discussion in workspace/conversation/_inbox.md.
 ## Usage
 ```
 message:new --message "hello world" --to "agent-name"
+message:new "hello world"  # positional argument for message
 ```
 
 ## Parameters
-- `--message`: The message content to send
-- `--to`: Agent to respond (e.g., discussion-moderator, general-assistant)
+- `--message`: The message content to send (required)
+- `--to`: Agent to respond (optional, defaults to discussion-moderator)
 
 ## Workflow
 1. Create new discussion thread in communication inbox
@@ -22,4 +23,5 @@ message:new --message "hello world" --to "agent-name"
 ```
 message:new --message "Should we explore VLA robotics?" --to "discussion-moderator"
 message:new --message "How does machine learning work?" --to "general-assistant"
+message:new "Hello world"  # uses default agent
 ```
