@@ -1,0 +1,33 @@
+{
+  "name": "Conversation Thread",
+  "platform": "conversation",
+  "type": "message",
+  "description": "Conversation thread message format",
+  "constraints": {
+    "maxChars": 500,
+    "sections": ["header", "message"]
+  },
+  "structure": [
+    {
+      "section": "header",
+      "type": "status_line",
+      "maxChars": 50,
+      "placeholder": "[Status indicator and timestamp]",
+      "aiPrompt": "Generate a conversation status header"
+    },
+    {
+      "section": "message",
+      "type": "message_content",
+      "maxChars": 300,
+      "placeholder": "[Main message content]",
+      "aiPrompt": "Create a concise conversation message about: {topic}"
+    }
+  ],
+  "formatting": {
+    "separator": "\n",
+    "platformRules": [
+      "Keep messages concise",
+      "Include timestamps"
+    ]
+  }
+}
