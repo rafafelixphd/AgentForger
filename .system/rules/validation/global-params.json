@@ -1,0 +1,21 @@
+{
+  "name": "global-params",
+  "rules": [
+    {
+      "id": "save_path_format",
+      "type": "format",
+      "field": "save",
+      "operator": "matches",
+      "value": "^/.*\\.json$",
+      "message": "Save path must be absolute path ending with .json"
+    },
+    {
+      "id": "context_length",
+      "type": "constraint",
+      "field": "context",
+      "operator": "max",
+      "value": 1000,
+      "message": "Context parameter must be less than 1000 characters"
+    }
+  ]
+}

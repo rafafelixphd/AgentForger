@@ -1,0 +1,73 @@
+{
+  "name": "Critic Report",
+  "platform": "critic",
+  "type": "analysis",
+  "description": "Structured critique report with comprehensive feedback",
+  "constraints": {
+    "maxChars": 2000,
+    "sections": ["metadata", "overview", "understanding", "critical_points", "positive_points", "questions", "final_remarks"]
+  },
+  "structure": [
+    {
+      "section": "metadata",
+      "type": "json",
+      "placeholder": "{\"domain\": \"general\", \"focus\": [], \"audience\": \"general\", \"personality\": \"balanced\"}",
+      "aiPrompt": "Generate metadata JSON for this critique: domain={domain}, focus={focus}, audience={audience}, personality={personality}"
+    },
+    {
+      "section": "overview",
+      "type": "paragraph",
+      "maxChars": 280,
+      "placeholder": "[Brief overview of the critique]",
+      "aiPrompt": "Provide a concise overview (under 280 chars) of your critique of this {domain} content: {content}"
+    },
+    {
+      "section": "understanding",
+      "type": "paragraph",
+      "maxChars": 280,
+      "placeholder": "[What you understood from the content]",
+      "aiPrompt": "Summarize what you understood (under 280 chars) from this {domain} content: {content}"
+    },
+    {
+      "section": "critical_points",
+      "type": "bullet_points",
+      "maxChars": 70,
+      "count": "3-10",
+      "placeholder": "[Critical feedback points]",
+      "aiPrompt": "List 3-10 critical points (max 70 chars each) about this {domain} content: {content}"
+    },
+    {
+      "section": "positive_points",
+      "type": "bullet_points",
+      "maxChars": 70,
+      "count": "3-10",
+      "placeholder": "[Positive aspects identified]",
+      "aiPrompt": "List 3-10 positive points (max 70 chars each) about this {domain} content: {content}"
+    },
+    {
+      "section": "questions",
+      "type": "bullet_points",
+      "maxChars": 70,
+      "count": "3-10",
+      "placeholder": "[Questions for clarification]",
+      "aiPrompt": "List 3-10 questions (max 70 chars each) that need clarification about this {domain} content: {content}"
+    },
+    {
+      "section": "final_remarks",
+      "type": "bullet_points",
+      "maxChars": 70,
+      "count": "3-10",
+      "placeholder": "[Final thoughts and recommendations]",
+      "aiPrompt": "Provide 3-10 final remarks (max 70 chars each) with recommendations for this {domain} content: {content}"
+    }
+  ],
+  "variation": {
+    "enabled": true,
+    "strategy": "section-level",
+    "sections": ["critical_points", "positive_points"]
+  },
+  "formatting": {
+    "separator": "\n\n",
+    "platformRules": ["critic-validation"]
+  }
+}

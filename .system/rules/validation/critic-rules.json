@@ -1,0 +1,83 @@
+{
+  "name": "critic-rules",
+  "rules": [
+    {
+      "id": "source_required",
+      "type": "presence",
+      "field": "source",
+      "message": "Source parameter is required for critique"
+    },
+    {
+      "id": "domain_valid",
+      "type": "constraint",
+      "field": "domain",
+      "operator": "in",
+      "value": ["research", "content", "thoughts", "code", "general"],
+      "message": "Domain must be one of: research, content, thoughts, code, general"
+    },
+    {
+      "id": "focus_valid",
+      "type": "format",
+      "field": "focus",
+      "operator": "matches",
+      "value": "^(logic|evidence|structure|style|ethics|completeness)(,(logic|evidence|structure|style|ethics|completeness))*$",
+      "message": "Focus must be comma-separated values from: logic, evidence, structure, style, ethics, completeness"
+    },
+    {
+      "id": "audience_valid",
+      "type": "constraint",
+      "field": "audience",
+      "operator": "in",
+      "value": ["expert", "general", "beginner"],
+      "message": "Audience must be one of: expert, general, beginner"
+    },
+    {
+      "id": "overview_length",
+      "type": "constraint",
+      "field": "overview.length",
+      "operator": "max",
+      "value": 280,
+      "message": "Overview section exceeds 280 character limit"
+    },
+    {
+      "id": "understanding_length",
+      "type": "constraint",
+      "field": "understanding.length",
+      "operator": "max",
+      "value": 280,
+      "message": "Understanding section exceeds 280 character limit"
+    },
+    {
+      "id": "critical_points_count",
+      "type": "constraint",
+      "field": "critical_points.length",
+      "operator": "max",
+      "value": 10,
+      "message": "Critical points cannot exceed 10 items"
+    },
+    {
+      "id": "positive_points_count",
+      "type": "constraint",
+      "field": "positive_points.length",
+      "operator": "max",
+      "value": 10,
+      "message": "Positive points cannot exceed 10 items"
+    },
+    {
+      "id": "questions_count",
+      "type": "constraint",
+      "field": "questions.length",
+      "operator": "max",
+      "value": 10,
+      "message": "Questions cannot exceed 10 items"
+    },
+    {
+      "id": "final_remarks_count",
+      "type": "constraint",
+      "field": "final_remarks.length",
+      "operator": "max",
+      "value": 10,
+      "message": "Final remarks cannot exceed 10 items"
+    }
+  ]
+}

@@ -25,14 +25,15 @@ class BaseWorkflow {
   }
 
   async executePipeline(context) {
-    const results = {};
+    context.phaseResults = {};
 
     for (const phase of this.phases) {
       console.log(`🔄 Phase: ${phase}`);
-      results[phase] = await this.executePhase(phase, context);
+      const result = await this.executePhase(phase, context);
+      context.phaseResults[phase] = result;
     }
 
-    return results;
+    return context.result || context.phaseResults;
   }
 
   async executePhase(phase, context) {
@@ -51,6 +52,50 @@ class BaseWorkflow {
     return context.globalContext || [];
   }
 
+  isSupportedCommand(command) {
+    return this.metadata.supportedCommands.includes(command);
+  }
+
+  async loadAgent(agentName) {
+    // Stub - in real implementation, load from .system/agents/
+    console.log(`Loading agent: ${agentName}`);
+    this.agents = this.agents || new Map();
+    this.agents.set(agentName, { name: agentName, loaded: true });
+  }
+
+  async loadTemplate(templateName) {
+    // Stub - in real implementation, load from .system/templates/
+    console.log(`Loading template: ${templateName}`);
+    this.templates = this.templates || new Map();
+    this.templates.set(templateName, { name: templateName, loaded: true });
+  }
+
+  async generateContent(template, params, agent) {
+    // Stub - in real implementation, use AI to generate content
+    console.log(`Generating content with template: ${template.name}, agent: ${agent.name}`);
+    return {
+      metadata: params,
+      overview: 'Sample overview of the critique',
+      understanding: 'Sample understanding summary',
+      critical_points: ['Point 1', 'Point 2'],
+      positive_points: ['Positive 1', 'Positive 2'],
+      questions: ['Question 1'],
+      final_remarks: ['Remark 1']
+    };
+  }
+
+  async validateWithRules(ruleSets, data) {
+    // Stub - in real implementation, apply validation rules
+    console.log(`Validating with rules: ${ruleSets.join(', ')}`);
+    return { valid: true, errors: [] };
+  }
+
+  async readFile(path) {
+    // Stub - in real implementation, read file
+    console.log(`Reading file: ${path}`);
+    return 'Sample file content';
+  }
+
   async executeInitializationPhase(context) {
     console.log('🔧 Initialization phase');
     return { status: 'initialized' };
@@ -58,6 +103,17 @@ class BaseWorkflow {
 
   async executeParametersPhase(context) {
     console.log('📋 Parameters phase');
+
+    // Validate global parameters
+    if (context.save) {
+      if (!context.save.startsWith('/') || !context.save.endsWith('.json')) {
+        throw new Error('Save path must be absolute and end with .json');
+      }
+    }
+    if (context.context && context.context.length > 1000) {
+      throw new Error('Context must be less than 1000 characters');
+    }
+
     return { status: 'parameters_processed', params: context.params };
   }
 
@@ -73,6 +129,7 @@ class BaseWorkflow {
 
   async executeOutputPhase(context) {
     console.log('📤 Output phase');
+    // Subclasses should set context.result here
     return { status: 'output_formatted' };
   }
 }
